@@ -1,0 +1,1023 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family:'Gill Sans';
+}
+
+.wrapper{
+    flex-grow: 1;
+}
+
+.open{
+    display: flex !important;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    background-color: #3E424B;
+    color: #FAF6F2;
+    padding: 0 40px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family:'Gill Sans';
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+.nav{
+    display: flex;
+    width: 65%;
+    justify-content: space-evenly;
+
+}
+
+.nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gill Sans';
+    font-size: 30px;
+}
+
+.nav li:hover {
+  background-color: gray;
+  border-radius: 15px;
+  transition: 0.5s;
+  font-size: 35px;
+}
+
+.burger{
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+
+.burger span{
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #FAF6F2;
+}
+
+.burger::before, .burger::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #FAF6F2;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before { top: 0 }
+
+.burger::after { bottom: 0 }
+
+
+/* Добавляем класс active для анимации иконки бургера */
+.burger.active span { transform: scale(0) }
+
+.burger.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+.hello_container {
+  background-image: url(../media/allSaab.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hello_content_img img {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  flex-basis: 60%;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 35px;
+  margin-left: 60px;
+}
+
+.hello_content_header {
+  font-size: 150px;
+  color: white;
+  font-weight: 700;
+}
+
+.hello_content_text {
+  color: white;
+  font-size: 35px;
+
+}
+
+.about_container {
+  width: 80%;
+  height: 45vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.about_header {
+  font-size: 80px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.about_text { 
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.offers {
+  width: 100%;
+  background-image: url(../media/offers_background.JPG);
+  background-size: 100%;
+}
+
+.offers_header{
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  color: white;
+  font-size: 80px;
+  padding-top: 70px;
+  margin-bottom: 30px;
+}
+
+.offers_container {
+  width: 80%;
+  height: 130vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 4%;
+}
+
+.offers_block {
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  flex-basis: 29%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+}
+
+.img_container {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.offers_text {
+  color: white;
+  text-align: center;
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+.name {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+.works {
+  background: -webkit-linear-gradient(0deg, rgb(0, 0, 0), rgb(28, 28, 28));
+}
+
+.works_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 70px;
+  padding: 50px;
+  color: white;
+}
+
+.works_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 150vh;
+  justify-content: space-around;
+  }
+
+.works_block {
+  width: 27%;
+  height: 46%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.works_block_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.works_description {
+  width: 95%;
+  height: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.description_header {
+  font-size: 40px;
+}
+
+.description_text {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.reviews_block_1,  
+.reviews_block_2,  
+.reviews_block_3 {
+  position: relative;
+  display: block;
+  top: 2em;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  line-height: 1.4;
+
+  animation-duration: 19s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.reviews_container {
+  width: 100%;
+  height: 120vh;
+  background-image: url(../media/Saab-9-3Back.JPG);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.reviews_header {
+  color: white;
+  font-size: 70px;
+  padding-top: 7vh;
+  text-align: center;
+  
+}
+
+.content_header {
+  font-size: 28px;
+  margin-bottom: 3vh;
+}
+
+.content_text {
+  font-size: 20px;
+}
+
+.reviews_block_1{
+  animation-name: anim-1;
+}
+
+.reviews_block_2{
+  color: white;
+  animation-name: anim-2;
+}
+
+.reviews_block_3{
+  color: white;
+  animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+  0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+  0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+  0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+.reviews_more_container {
+  width: 100%;
+  height: 22vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  align-items: center;  
+}
+
+.reviews_more_block a{
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+}
+
+.reviews_more_block a:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  transition: 0.6s;
+}
+
+.contacts_container {
+  background-image: url(../media/9KREDback.JPG);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contacts_header {
+  color: white;
+  font-size: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contacts_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2;
+  
+}
+
+.contacts_block_content {
+  color: white;
+  font-size: 30px;
+}
+
+.footer_container {
+  background: black;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.footer_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer_content {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 2560px) {
+  .logo span {
+    font-size: 65px;
+  }
+  .nav li {
+    font-size: 45px;
+  }
+  .nav {
+    width: 55%;
+  }
+  .hello_content_header {
+    font-size: 18em;
+  }
+  .hello_content_text {
+    font-size: 3em;
+  }
+  .about_header {
+    font-size: 8em;
+  }
+  .about_text {
+    font-size: 3em;
+  }
+  .offers_header {
+    font-size: 8em;
+  }
+  .name {
+    font-size: 65px;
+  }
+  .offers_text {
+    font-size: 35px;
+  }
+  .works_header {
+    font-size: 8em;
+  }
+  .description_header {
+    font-size: 4em;
+  }
+  .description_text {
+    font-size: 2em;
+  }
+  .reviews_header {
+    font-size: 8em;
+  }
+  .content_header {
+    font-size: 4em;
+  }
+  .content_text {
+    font-size: 3em;
+  }
+  .reviews_more_block a {
+    font-size: 4em;
+  }
+  .contacts_header {
+    font-size: 8em;
+  }
+  .contacts_block_content {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .logo span {
+    font-size: 50px;
+  }
+  .nav li {
+    font-size: 40px;
+  }
+  .hello_content_header {
+    font-size: 14em;
+  }
+  .hello_content_text {
+    font-size: 40px;
+  }
+  .about_header {
+    font-size: 7em;
+  }
+  .about_text {
+    font-size: 35px;
+  }
+  .offers_header {
+    font-size: 7em;
+  }
+  .name {
+    font-size: 45px;
+  }
+  .offers_text {
+    font-size: 26px;
+  }
+  .works_header {
+    font-size: 7em;
+  }
+  .description_header {
+    font-size: 3em;
+  }
+  .description_text {
+    font-size: 25px;
+  }
+  .reviews_header {
+    font-size: 7em;
+  }
+  .content_header {
+    font-size: 3em;
+  }
+  .content_text {
+    font-size: 30px;
+  }
+  .reviews_more_block a {
+    font-size: 3em;
+  }
+  .contacts_header {
+    font-size: 7em;
+  }
+  .contacts_block_content {
+    font-size: 2em;
+  }
+}
+
+
+@media screen and (max-width: 1600px) {
+  .logo span {
+    font-size: 6vh;
+  }
+  .nav li {
+    font-size: 23px;
+  }
+  .nav {
+    width: 60%;
+  }
+  .hello_content_header {
+    font-size: 7em;
+  }
+  .hello_content_text {
+    font-size: 4vh;
+  }
+  .about_header {
+    font-size: 4em;
+  }
+  .about_text {
+    font-size: 26px;
+  }
+  .offers_block {
+    height: 40%;
+    flex-basis: 25%;
+  }
+  .offers_header {
+    font-size: 4em;
+  }
+  .name {
+    font-size: 25px;
+  }
+  .offers_text {
+    font-size: 15px;
+  }
+  .works_container {
+    height: 160vh;
+  }
+  .works_block {
+    width: 27%;
+    height: 50%;
+  }
+  .works_header {
+    font-size: 4em;
+  }
+  .description_header {
+    font-size: 30px;
+  }
+  .description_text {
+    font-size: 17px;
+  }
+  .reviews_container {
+    height: 100vh;
+  }
+  .reviews_header {
+    font-size: 4em;
+  }
+  .content_header {
+    font-size: 22px;
+  }
+  .content_text {
+    font-size: 17px;
+  }
+  .reviews_more_block a {
+    font-size: 2em;
+  }
+  .contacts_header {
+    font-size: 5em;
+  }
+  .contacts_block_content {
+    font-size: 4vh;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .logo span {
+    font-size: 7vh;
+  }
+  .nav li {
+    font-size: 4vh;
+  }
+  .hello_content_header {
+    font-size: 10em;
+  }
+  .hello_content_text {
+    font-size: 5vh;
+  }
+  .about_header {
+    font-size: 6em;
+  }
+  .about_text {
+    font-size: 4vh;
+  }
+  .offers_block {
+    height: 47%;
+    flex-basis: 25%;
+  }
+  .offers_header {
+    font-size: 6em;
+  }
+  .name {
+    font-size: 33px;
+  }
+  .offers_text {
+    font-size: 19px;
+  }
+  .works_container {
+    height: 200vh;
+  }
+  .works_block {
+    width: 30%;
+  }
+  .works_header {
+    font-size: 6em;
+  }
+  .description_header {
+    font-size: 3em;
+  }
+  .description_text {
+    font-size: 20px;
+  }
+  .reviews_container {
+    height: 100vh;
+  }
+  .reviews_header {
+    font-size: 6em;
+  }
+  .content_header {
+    font-size: 3vh;
+  }
+  .content_text {
+    font-size: 3vh;
+  }
+  .reviews_more_block a {
+    font-size: 2em;
+  }
+  .contacts_header {
+    font-size: 6em;
+  }
+  .contacts_block_content {
+    font-size: 4vh;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .logo span {
+    font-size: 7vh;
+  }
+  .nav li {
+    font-size: 4vh;
+  }
+  .hello_content_header {
+    font-size: 8em;
+  }
+  .hello_content_text {
+    font-size: 4vh;
+  }
+  .about_header {
+    font-size: 5em;
+  }
+  .about_text {
+    font-size: 4vh;
+  }
+  .offers_block {
+    height: 47%;
+  }
+  .offers_header {
+    font-size: 5em;
+  }
+  .name {
+    font-size: 29px;
+  }
+  .offers_text {
+    font-size: 19px;
+  }
+  .works_container {
+    height: 200vh;
+  }
+  .works_block {
+    width: 30%;
+  }
+  .works_header {
+    font-size: 4em;
+  }
+  .description_header {
+    font-size: 3em;
+  }
+  .description_text {
+    font-size: 20px;
+    background-color: #3E424B;
+    padding: 10px;
+  }
+  .reviews_container {
+    height: 100vh;
+  }
+  .reviews_header {
+    font-size: 8vh;
+  }
+  .reviews_block_1,  
+.reviews_block_2,  
+.reviews_block_3 {
+  padding: 15px;
+}
+  .content_header {
+    font-size: 25px;
+  }
+  .content_text {
+    font-size: 19px;
+  }
+  .reviews_more_block a {
+    font-size: 2em;
+  }
+  .contacts_header {
+    font-size: 5em;
+  }
+  .contacts_block_content {
+    font-size: 4vh;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .reviews_more_block a {
+    font-size: 4vh;
+  }
+  .offers_container {
+    height: 120vh;
+  }
+  .name {
+    font-size: 21px;
+  }
+  .offers_text {
+    font-size: 16px;
+  }
+  .works_header {
+   padding-bottom: 8vh;
+  }
+  .works {
+    height: 270vh;
+  }
+  .works_block {
+    flex-basis: 35%;
+    height: 40%;
+  }
+  .description_header {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .description_text {
+    font-size: 20px;
+  }
+}
+/* При разрешении экрана 900px и ниже, выводим на экран иконку бургера */
+@media (max-width: 900px) {
+
+    .burger { display: flex }
+
+    .nav{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: black;
+        animation: burgerAnimation 0.4s;
+    }
+    .nav ul{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    
+}
+
+@keyframes burgerAnimation {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@media screen and (max-width: 768px) {
+  .hello_content_header {
+    font-size: 6em;
+  }
+  .hello_content_text {
+    font-size: 2em;
+  }
+  .hello_content_img img {
+    height: 38vh;
+  }
+  .about_header {
+    font-size: 4em;
+  }
+  .about_text{
+    font-size: 20px;
+  }
+  .offers_container {
+    height: 140vh;
+  }
+  .offers_header {
+    font-size: 4em;
+  }
+  .offers_block {
+    flex-basis: 40%;
+    height: 40vh;
+  }
+  .name {
+    font-size: 18px;
+  }
+  .offers_text {
+    font-size: 15px;
+  }
+  .works {
+    height: 220vh;
+  }
+  .works_container {
+    height: 153vh;
+  }
+  .works_block {
+    height: 43%;
+  }
+  .works_header {
+    padding: 26px;
+  }
+  .description_header {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .description_text {
+    font-size: 17px;
+    background: none;
+    padding: 0;
+  }
+  .reviews_container {
+    height: 100vh;
+    background-image: url(../media/reviews768pxBack.jpeg);
+  }
+  .reviews_header {
+    font-size: 4em;
+  }
+  .content_header {
+    font-size: 22px;
+  }
+  .content_text {
+    font-size: 18px;
+  }
+  .reviews_block_1,
+  .reviews_block_2,
+  .reviews_block_3 {
+    padding: 5px;
+  }
+  .reviews_more_block a {
+    font-size: 3vh;
+  }
+  .contacts_container {
+    background-image: url(../media/9KRED768back.JPG);
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .logo span {
+    font-size: 5vh;
+  }
+  .hello_container {
+    background-image: url(../media/hello_back_mobile.JPG);
+  }
+  .hello_content_img img {
+    visibility: hidden;
+  }
+  .hello_content_header {
+    font-size: 13vh;
+  }
+  .hello_content_text {
+    font-size: 5vh;
+  }
+  .about_header {
+    font-size: 8vh;
+  }
+  .about_text {
+    font-size: 3vh;
+  }
+  .offers_header {
+    font-size: 4em;
+  }
+  .offers_container {
+   height: 370vh;
+   width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .offers_block {
+    width: 70%;
+    flex: 1 1;
+    flex-basis: auto;
+    height: 14%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  .name {
+    font-size: 22px;
+  }
+  .offers_text {
+    font-size: 17px;
+    width: 90%;
+  }
+}
